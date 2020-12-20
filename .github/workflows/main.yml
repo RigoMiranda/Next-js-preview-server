@@ -66,7 +66,7 @@ jobs:
         - name: Install dependencies
         - uses: borales/actions-yarn@v2.0.0
           with:
-            cmd: |
+            run: |
               cd wp-preview-server
               install # will run `yarn install` command
 
