@@ -65,10 +65,9 @@ jobs:
         # Install project dependencies and build
         - name: Install dependencies
         - uses: borales/actions-yarn@v2.0.0
+        - run: cd wp-preview-server/
           with:
-            run: |
-              cd wp-preview-server
-              install # will run `yarn install` command
+            cmd: install # will run `yarn install` command
 
 
         # Install AWS CLI 2
