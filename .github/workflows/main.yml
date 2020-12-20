@@ -44,8 +44,8 @@ jobs:
         matrix:
           python-version: [3.8]
           node-version: ['12.x']
-          appname: ['next-preview-server']
-          deploy-group: ['dev']
+          appname: ['Next-Preview-Server']
+          deploy-group: ['Dev']
           s3-bucket: ['next-preview-server']
           s3-filename: ['next-code']
 
