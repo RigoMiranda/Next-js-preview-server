@@ -58,12 +58,18 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: ${{ matrix.node-version }}
+        
+      # Is a mono-repo
+          # run: cd wp-preview-server
 
         # Install project dependencies and build
-#         - name: Install dependencies
-#           run: npm install
-#         - name: Run build
-#           run: npm run build
+        - name: Install dependencies
+        - uses: borales/actions-yarn@v2.0.0
+          with:
+            cmd: |
+              cd wp-preview-server
+              install # will run `yarn install` command
+
 
         # Install AWS CLI 2
         - name: Install AWS CLI 2
