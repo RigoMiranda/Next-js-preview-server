@@ -58,17 +58,14 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: ${{ matrix.node-version }}
-        
-      # Is a mono-repo
-          # run: cd wp-preview-server
+          run: npm install -g yarn
 
         # Install project dependencies and build
         - name: Install dependencies
-        - uses: borales/actions-yarn@v2.0.0
-        - run: cd wp-preview-server/
-          with:
-            cmd: install # will run `yarn install` command
-
+          run: |
+            cd wp-preview-server/
+            yarn
+            cd ..
 
         # Install AWS CLI 2
         - name: Install AWS CLI 2
@@ -99,8 +96,8 @@ jobs:
         - name: AWS Create Deployment
           run: |
             aws deploy create-deployment \
-             --application-name ${{ matrix.appname }} \
-             --deployment-config-name CodeDeployDefault.OneAtATime \
-             --deployment-group-name ${{ matrix.deploy-group }} \
-             --file-exists-behavior OVERWRITE \
-             --s3-location bucket=${{ matrix.s3-bucket }},key=${{ matrix.s3-filename }}.zip,bundleType=zip \
+            --application-name ${{ matrix.appname }} \
+            --deployment-config-name CodeDeployDefault.OneAtATime \
+            --deployment-group-name ${{ matrix.deploy-group }} \
+            --file-exists-behavior OVERWRITE \
+            --s3-location bucket=${{ matrix.s3-bucket }},key=${{ matrix.s3-filename }}.zip,bundleType=zip \
