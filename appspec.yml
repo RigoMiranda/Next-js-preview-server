@@ -2,4 +2,15 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/
+    destination: /home/ec2-user/
+
+hooks:
+  AfterInstall:
+    - location: scripts/install-server-dep.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start-server.sh
+      timeout: 300
+      runas: root
+  
