@@ -14,5 +14,5 @@ npm install -g yarn
 yarn
 
 # Start the Application:
-# nohup yarn dev &
-# npm run dev&
+npm install pm2 -g
+pm2 --name PreviewServer start npm -- run dev
