@@ -12,3 +12,6 @@ npm install -g yarn
 
 # Installing Project Depencencies:
 yarn
+
+# Start the Application:
+yarn dev
