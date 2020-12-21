@@ -15,3 +15,4 @@ yarn
 
 # Start the Application:
 nohup yarn dev &
+exit 1
