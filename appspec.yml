@@ -9,8 +9,8 @@ hooks:
     - location: scripts/install-server-dep.sh
       timeout: 300
       runas: root
-  # ApplicationStart:
-  #   - location: scripts/start-server.sh
-  #     timeout: 300
-  #     runas: root
+  ApplicationStart:
+    - location: scripts/start-server.sh
+      # timeout: 300
+      runas: root
   

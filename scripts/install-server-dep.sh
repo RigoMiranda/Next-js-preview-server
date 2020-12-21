@@ -15,4 +15,4 @@ yarn
 
 # Start the Application:
 # nohup yarn dev &
-npm run dev&
+# npm run dev&
