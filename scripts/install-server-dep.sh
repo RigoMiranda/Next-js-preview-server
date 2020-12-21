@@ -1,5 +1,6 @@
 #!/bin/bash
-cd /home/ec2-user
+sudo su
+cd /home/ec2-user/wp-preview-server/
 
 # Installing Node JS:
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
@@ -10,5 +11,4 @@ nvm install node
 npm install -g yarn
 
 # Installing Project Depencencies:
-# cd wp-preview-server/
-# yarn
+yarn

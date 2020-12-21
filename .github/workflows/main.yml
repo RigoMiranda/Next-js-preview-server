@@ -53,16 +53,16 @@ jobs:
       steps:
         - uses: actions/checkout@v2
 
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node-version }}
-        - run: npm install -g yarn
-        - name: yarn install
-          run: |
-            cd wp-preview-server/
-            yarn
-            cd ..
+        # - name: Use Node.js ${{ matrix.node-version }}
+        #   uses: actions/setup-node@v1
+        #   with:
+        #     node-version: ${{ matrix.node-version }}
+        # - run: npm install -g yarn
+        # - name: yarn install
+        #   run: |
+        #     cd wp-preview-server/
+        #     yarn
+        #     cd ..
 
         # Install AWS CLI 2
         - name: Install AWS CLI 2
