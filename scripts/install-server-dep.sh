@@ -14,4 +14,4 @@ npm install -g yarn
 yarn
 
 # Start the Application:
-yarn dev
+nohup yarn dev &
