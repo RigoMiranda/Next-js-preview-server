@@ -7,11 +7,13 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 . ~/.nvm/nvm.sh
 nvm install node
 
-# Installing Yarn:
-npm install -g yarn
+## If using npm ##
+npm i
 
+## If using Yarn ##
+# npm install -g yarn
 # Installing Project Depencencies:
-yarn
+# yarn
 
 # Start the Application:
 npm install pm2 -g
