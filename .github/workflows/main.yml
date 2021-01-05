@@ -57,9 +57,9 @@ jobs:
 
             cd infrastructure/
             npm i
-            
+
             export STAGE=production
-            cdk deploy --all -v --required-approval "never"  
+            cdk deploy --all -v cdk_subcommand: "deploy --require-approval never"  
 
         # Deploy push to AWS S3
         - name: AWS Deploy push
