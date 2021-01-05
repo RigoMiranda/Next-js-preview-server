@@ -48,8 +48,7 @@ jobs:
 
         # Determine Environment:
         - name: Determine Environment
-        - run: |  
-            export STAGE=prod
+          run: export STAGE=prod
 
         - name: Deploy backend
           uses: youyo/aws-cdk-github-actions@v1
