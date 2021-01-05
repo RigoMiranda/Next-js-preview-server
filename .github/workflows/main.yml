@@ -46,20 +46,10 @@ jobs:
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: us-east-1
 
-        # Installing & Deploying AWS CDK
-        # - name: Use Node.js ${{ matrix.node-version }}
-        #   uses: actions/setup-node@v1
-        #   with:
-        #     node-version: ${{ matrix.node-version }}
-        # - run: |
-        #     npm install -g aws-cdk
-        #     cdk --version
-
-        #     cd infrastructure/
-        #     npm i
-            
-        #     export STAGE=production
-        #     cdk deploy --all -v --required-approval "never"
+        # Determine Environment:
+        - name: Determine Environment
+        - run: |  
+            export STAGE=prod
 
         - name: Deploy backend
           uses: youyo/aws-cdk-github-actions@v1

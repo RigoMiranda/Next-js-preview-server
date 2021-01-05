@@ -3,7 +3,7 @@ import * as cdk from '@aws-cdk/core';
 import { CodeDeployStack } from '../lib/codeDeploy';
 import { EC2Stack } from '../lib/ec2-stack';
 
-const stage   = process.env.STAGE || "development";
+const stage   = process.env.STAGE || "dev";
 const env     = {
     account: process.env.CDK_DEFAULT_ACCOUNT,
     region: process.env.CDK_DEFAULT_REGION || "us-east-1",
