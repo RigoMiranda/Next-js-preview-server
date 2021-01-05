@@ -10,8 +10,8 @@ const env     = {
 };
 
 const app               = new cdk.App();
-const ec2Stack          = new EC2Stack(app, `PreviewServerEC2Stack`, stage, { env: env });
-const codeDeployStack   = new CodeDeployStack(app, `PreviewServerCodeDeployStack`, stage, { env: env });
+const ec2Stack          = new EC2Stack(app, `PreviewServerEC2Stack${stage}`, stage, { env: env });
+const codeDeployStack   = new CodeDeployStack(app, `PreviewServerCodeDeployStack${stage}`, stage, { env: env });
 
 /*  Adding Resources/Dependencies */
 codeDeployStack.serverDeploymentGroup.addAutoScalingGroup(ec2Stack.ec2AutoScalingGroup);

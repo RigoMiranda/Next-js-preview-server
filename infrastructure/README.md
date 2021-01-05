@@ -1,9 +1,8 @@
-# Welcome to your CDK TypeScript project!
+# Next.js Preview Server AWS CDK TypeScript project!
 
-You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`InfrastructureStack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+* The `cdk.json` file tells the CDK Toolkit how to execute your app.
+* The `./bin/infrastructure` file creates the CDK App and  import the different stack.
+* In `./lib` you can find the definition of the stacks.
 
 ## Useful commands
 

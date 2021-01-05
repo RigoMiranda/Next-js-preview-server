@@ -11,6 +11,8 @@ AWS CDK is been used to creates the infrastructure. Some of the resources create
 * Code Deploy Application
 * Code Deploy Deployment Groups
 
+The code can be found in `./infrastructure`
+
 ## Next.js Headless WordPress (WP) Template:
 To use this service with Headless WP, you can start with the startup template `cms-wordpress` from [Vercel/Next.js](https://github.com/vercel/next.js/tree/canary/examples/cms-wordpress). **If the Next.js server is going to be running in the same environment/endpoint as WordPress, then follow the template instructions.**
 
