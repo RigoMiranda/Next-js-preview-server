@@ -65,10 +65,10 @@ jobs:
           uses: youyo/aws-cdk-github-actions@v1
           with:
             working_dir: "./infrastructure" 
-            cdk_subcommand: "deploy --all -v --require-approval never"
+            cdk_subcommand: "deploy --require-approval never"
             cdk_stack: "*"
             actions_comment: false
-            args: ""
+            args: "--all -v"
           env:
             AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
             AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
