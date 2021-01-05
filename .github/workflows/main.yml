@@ -47,19 +47,32 @@ jobs:
             aws-region: us-east-1
 
         # Installing & Deploying AWS CDK
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v1
+        # - name: Use Node.js ${{ matrix.node-version }}
+        #   uses: actions/setup-node@v1
+        #   with:
+        #     node-version: ${{ matrix.node-version }}
+        # - run: |
+        #     npm install -g aws-cdk
+        #     cdk --version
+
+        #     cd infrastructure/
+        #     npm i
+            
+        #     export STAGE=production
+        #     cdk deploy --all -v --required-approval "never"
+
+        - name: Deploy backend
+          uses: youyo/aws-cdk-github-actions@v1
           with:
-            node-version: ${{ matrix.node-version }}
-        - run: |
-            npm install -g aws-cdk
-            cdk --version
-
-            cd infrastructure/
-            npm i
-
-            export STAGE=production
-            cdk deploy --all -v cdk_subcommand: "deploy" --required-approval "never"  
+            working_dir: "./infrastructure" 
+            cdk_subcommand: "deploy"
+            cdk_stack: "*"
+            actions_comment: false
+            args: "--require-approval never"
+          env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            AWS_DEFAULT_REGION: 'us-east-1'
 
         # Deploy push to AWS S3
         - name: AWS Deploy push
