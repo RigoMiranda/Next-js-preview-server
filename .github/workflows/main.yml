@@ -56,8 +56,9 @@ jobs:
             cdk --version
 
             cd infrastructure/
+            npm i
+            
             export STAGE=production
-
             cdk deploy --all -v --required-approval "never"  
 
         # Deploy push to AWS S3
