@@ -2,6 +2,7 @@
 import * as cdk from '@aws-cdk/core';
 import { CodeDeployStack } from '../lib/codeDeploy';
 import { EC2Stack } from '../lib/ec2-stack';
+import { S3Stack } from '../lib/s3-stack';
 
 const stage   = process.env.STAGE || "dev";
 const env     = {
@@ -10,6 +11,7 @@ const env     = {
 };
 
 const app               = new cdk.App();
+const s3Stack           = new S3Stack(app, `PreviewServerS3Stack${stage}`, stage, { env: env });
 const ec2Stack          = new EC2Stack(app, `PreviewServerEC2Stack${stage}`, stage, { env: env });
 const codeDeployStack   = new CodeDeployStack(app, `PreviewServerCodeDeployStack${stage}`, stage, { env: env });
 
