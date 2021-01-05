@@ -13,7 +13,6 @@ import {
 } from "@aws-cdk/aws-ec2";
 import { AutoScalingGroup } from "@aws-cdk/aws-autoscaling";
 import { ApplicationTargetGroup, ApplicationProtocol, TargetType, ApplicationLoadBalancer } from "@aws-cdk/aws-elasticloadbalancingv2";
-import { Transform } from 'stream';
 
 /*
     Documentation:

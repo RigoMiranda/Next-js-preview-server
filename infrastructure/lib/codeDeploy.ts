@@ -1,7 +1,6 @@
 import * as cdk from '@aws-cdk/core';
 import { ServerApplication, ServerDeploymentGroup, InstanceTagSet} from '@aws-cdk/aws-codedeploy';
 import { Role, ServicePrincipal, ManagedPolicy } from "@aws-cdk/aws-iam";
-import  { EC2Stack } from './ec2-stack';
 
 /*
     Documentation:
