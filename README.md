@@ -19,7 +19,7 @@ To use this service with Headless WP, you can start with the startup template `c
 ### Using Next.js Preview Mode outside WordPress Environment
 To point the WP Preview to Next.js server, we will need to modify/hack the `WP Preview Button` behavior using WP `'previewpostlink' hook`.
 
-#### WP Hook
+#### WordPress Hook
 Add the filter below in the `wordpress/wp-content/themes/templateName/functions.php`
 ```php
 add_filter('preview_post_link', function ($link) {
