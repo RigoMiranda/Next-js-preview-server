@@ -15,13 +15,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+
   deploy:
       name: CD Pipeline
       runs-on: ubuntu-latest
       strategy:
         matrix:
           python-version: [3.8]
-          node-version: ['12.x']
+          node-version: ['14.x']
           appname: ['NextPreviewServer-dev']
           deploy-group: ['PreviewServer']
           s3-bucket: ['next-preview-server']
@@ -44,6 +45,20 @@ jobs:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: us-east-1
+
+        # Installing & Deploying AWS CDK
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ matrix.node-version }}
+        - run: |
+            npm install -g aws-cdk
+            cdk --version
+
+            cd infrastructure/
+            export STAGE=production
+
+            cdk deploy --all -v --required-approval "never"  
 
         # Deploy push to AWS S3
         - name: AWS Deploy push

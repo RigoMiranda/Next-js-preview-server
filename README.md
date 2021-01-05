@@ -23,15 +23,15 @@ Add the filter below in the `wordpress/wp-content/themes/templateName/functions.
 add_filter('preview_post_link', function ($link) {
 	global $post;
 	$post_ID = $post->post_parent;        
-    return 'http://localhost:3000/api/'
+    return 'http://previewServerEndPoint.com:3000/api/'
 		. 'preview?id='
 		. $post_slug . '&wpnonce='
 		. wp_create_nonce('wp_rest');
 });
 ```
 
-## CI/CD:
-Automating the infrastructure deployment.
+## CI/CD  Pipeline:
+With the CI/CD pipeline we are deploying the AWS CDK infrastructure. Once the infrastructure is created, then we push the code to an S3, Bucket, and create a Code Deploy Deployment to push the code into the EC2 instances and start the Next.js Preview Mode.
 
 ### Requirement:
 For any CI/CD you will need to provide environment variables with the `AWS Credentials` of a user with `Admin Permissions`. The following variables are:
@@ -39,7 +39,7 @@ For any CI/CD you will need to provide environment variables with the `AWS Crede
 * AWS_SECRET_ACCESS_KEY
 
 ### GitHub Action
-In the file `.github/workflows/main.yml` you will find the code to
+In the file `.github/workflows/main.yml` you will find the deployment steps. 
 
 ---
 ### CircleCI
