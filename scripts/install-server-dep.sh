@@ -15,6 +15,11 @@ npm i
 # Installing Project Depencencies:
 # yarn
 
-# Start the Application:
+# Installing pm2-npm
 npm install pm2 -g
+
+# If is an update, kill current process
+pm2 stop all
+
+# Start the Application:
 pm2 --name PreviewServer start npm -- run dev
