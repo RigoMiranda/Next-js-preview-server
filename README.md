@@ -1,4 +1,4 @@
-# Next.js Preview Server
+# Next.js Preview Server ![Deploy Next.js Preview Server](https://github.com/RigoMiranda/Next-js-preview-server/workflows/Deploy%20Next.js%20Preview%20Server/badge.svg?branch=main)
 This project provides the AWS infrastructure to deploy a Next.js project and expose a server running Next.js Preview Mode. 
 ## Infrastructure: 
 AWS CDK is been used to creates the infrastructure. Some of the resources created by the project are:
