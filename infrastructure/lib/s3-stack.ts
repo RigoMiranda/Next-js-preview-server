@@ -14,7 +14,7 @@ export class S3Stack extends cdk.Stack {
         super(scope, id, props);
 
         this.deploymentBucket = new Bucket(this, `PreviewBucket${stage}`, {
-            bucketName: `next-js-preview-server-${stage}` // Bucket nam must be unique.
+            bucketName: `next-js-preview-rm-${stage}` // Bucket name must be unique.
         });
     }
 
