@@ -1,5 +1,7 @@
 # Next.js Preview Server ![Deploy Next.js Preview Server](https://github.com/RigoMiranda/Next-js-preview-server/workflows/Deploy%20Next.js%20Preview%20Server/badge.svg?branch=main)
 This project provides the AWS infrastructure to deploy a Next.js project and expose a server running Next.js Preview Mode. 
+
+*Note: This project `only` deploy the Next.js project, I will support WordPress in the infrastructure in the future.*
 ## Infrastructure: 
 AWS CDK is been used to creates the infrastructure. Some of the resources created by the project are:
 * IAM Roles & Policies
@@ -11,7 +13,7 @@ AWS CDK is been used to creates the infrastructure. Some of the resources create
 * Code Deploy Application
 * Code Deploy Deployment Groups
 
-The code can be found in `./infrastructure`
+**Note: `Before deploying, read the infrastructure documentation in ./infrastructure`**
 
 ## Next.js Headless WordPress (WP) Template:
 To use this service with Headless WP, you can start with the startup template `cms-wordpress` from [Vercel/Next.js](https://github.com/vercel/next.js/tree/canary/examples/cms-wordpress). **If the Next.js server is going to be running in the same environment/endpoint as WordPress, then follow the template instructions.**
@@ -33,7 +35,7 @@ add_filter('preview_post_link', function ($link) {
 ```
 
 ## CI/CD  Pipeline:
-With the CI/CD pipeline we are deploying the AWS CDK infrastructure. Once the infrastructure is created, then we push the code to an S3, Bucket, and create a Code Deploy Deployment to push the code into the EC2 instances and start the Next.js Preview Mode.
+With the CI/CD pipeline we are deploying the AWS CDK infrastructure automatically on every commit to the master branch (if any change). Once the infrastructure is created, then we push the code to an S3, Bucket, and create a Code Deploy Deployment to push the code into the EC2 instances and start the Next.js Preview Mode.
 
 ### Requirement:
 For any CI/CD you will need to provide environment variables with the `AWS Credentials` of a user with `Admin Permissions`. The following variables are:

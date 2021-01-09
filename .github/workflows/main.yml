@@ -25,7 +25,7 @@ jobs:
           node-version: ['14.x']
           appname: ['NextPreviewServer-dev']
           deploy-group: ['PreviewServer']
-          s3-bucket: ['next-preview-server']
+          s3-bucket: ['next-js-preview-rm-dev']
           s3-filename: ['next-code']
 
       steps:
